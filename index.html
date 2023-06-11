@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+ <meta charset="UTF-8">
+ <meta http-equiv="X-UA-Compatible" content="IE=edge">
+ <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ <title>Lab6 web design</title>
+
+<style> 
+main{
+min-height:100%;
+margin-top: 3%;
+}
+footer{
+width: 100%;
+left: 0;
+bottom: 0;
+background: blue;
+position: fixed;
+padding: 1%;
+color:#FFFFFF;
+text-align: center;
+}
+header{
+width: 100%;
+right: 0;
+top: 0;
+background: blue;
+position: fixed;
+padding: 1%;
+color:#FFFFFF;
+text-align: center;
+}
+.sidebar {
+color: #ffff00;
+width: 150px;
+height: 100vh;
+background-color: yellow;
+float: left;
+margin-right: 5%;
+}
+nav .link {
+font-size: 12px;
+color: #008000;
+display: block;
+padding: 12px;
+margin: 10px;
+padding-left: 30px;
+text-decoration: none;
+background-color: #008000;
+}
+nav .link:hover, .link:visited:hover
+{
+color: #008000;
+text-decoration: none;
+background-color: green;
+}
+nav p {
+margin: 0;
+padding: 15px;
+}
+</style>
+</head>
+<body>
+<header>
+
+ Мафія, <?php
+echo "дата : " . date('d.m.y') . "";
+?>
+
+</header>
+<main>
+<div class="sidebar">
+ <nav>
+ <ul class="navigation">
+ <p>Навігація</p>
+ <li>
+ <a href="index.html">
+ Головна
+ </a>
+ </li>
+ <li>
+ <a href="about-us.html">
+ Про нас
+ </a>
+ </li>
+ </ul>
+ </nav>
+</div>
+<div id="buttonSection"></div>
+<script type="text/javascript">
+let counter = 0;
+function increment() {
+ counter++;
+ document.getElementById("countText").innerHTML = counter;
+ 
+ if (counter >= 20) {
+ alert("Досягнення за наполегливість отримано");
+ }
+}
+
+function pasteHTML() {
+ const buttonSection = document.getElementById("buttonSection");
+ const button = document.createElement("button");
+ button.innerHTML = "кнопка";
+ button.onclick = increment;
+ const countText = document.createElement("font");
+ countText.id = "countText";
+ countText.innerHTML = "0";
+ buttonSection.appendChild(button);
+ buttonSection.appendChild(document.createTextNode(" Кількість натискань на клавішу: "));
+ buttonSection.appendChild(countText);
+}
+
+pasteHTML();
+</script>
+ <center><h1>Список ролей у мафії</h1></center>
+    <ol><i>
+        <li>Мафія</li>
+        <li>Дон</li>
+        <li>Комісар</li>
+        <li>Мирний житель</li>
+    </i></ol>
+<center><table border="2">
+        <tr>
+            <th>Назва ролі</th>
+            <th>Опис ролі</th>
+            <th>Складність</th>
+        </tr>
+        <tr>
+            <td>Дон</td>
+            <td>Керує командою чорних, шукає шерифа</td>
+            <td>+++</td>
+        </tr>
+        <tr>
+            <td>Мафія</td>
+            <td>Чорний, який має вбити всіх червоних в ніч</td>
+            <td>++</td>
+        </tr>
+        <tr>
+            <td>Комісар</td>
+            <td>В команді червоних, шукає чорних</td>
+            <td>+++</td>
+        </tr>
+        <tr>
+            <td>Мирний житель</td>
+            <td>В команді червоних, на стадії дня вичисляють чорних та голосують проти них</td>
+            <td>+</td>
+        </tr>
+    </table></center>
+    
+	<br>
+<h1>Додати відгук</h1>
+<form method="post" action="scripts/post.php">
+Нік: <input type="text" name="fname">
+Коментар: <input type="text" name="ftext">
+<input type="submit">
+</form>
+<br>
+	
+    <br>
+<center><iframe width="560" height="315" src="https://www.youtube.com/embed/fjizn7UigTs" title="YouTube video gaid" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
+<br>
+
+
+</main>
+<footer>
+ Сайт
+</footer>
+</body>
+</html>
