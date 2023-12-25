@@ -1,171 +1,184 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
- <meta charset="UTF-8">
- <meta http-equiv="X-UA-Compatible" content="IE=edge">
- <meta name="viewport" content="width=device-width, initial-scale=1.0">
- <title>Lab6 web design</title>
+  <meta charset="UTF-8">
+  <title>Види покемонів</title>
+  <style>
+    /* CSS стилі */
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      line-height: 1.6;
+    }
 
-<style> 
-main{
-min-height:100%;
-margin-top: 3%;
-}
-footer{
-width: 100%;
-left: 0;
-bottom: 0;
-background: blue;
-position: fixed;
-padding: 1%;
-color:#FFFFFF;
-text-align: center;
-}
-header{
-width: 100%;
-right: 0;
-top: 0;
-background: blue;
-position: fixed;
-padding: 1%;
-color:#FFFFFF;
-text-align: center;
-}
-.sidebar {
-color: #ffff00;
-width: 150px;
-height: 100vh;
-background-color: yellow;
-float: left;
-margin-right: 5%;
-}
-nav .link {
-font-size: 12px;
-color: #008000;
-display: block;
-padding: 12px;
-margin: 10px;
-padding-left: 30px;
-text-decoration: none;
-background-color: #008000;
-}
-nav .link:hover, .link:visited:hover
-{
-color: #008000;
-text-decoration: none;
-background-color: green;
-}
-nav p {
-margin: 0;
-padding: 15px;
-}
-</style>
+    header {
+      background-color: #f2f2f2;
+      padding: 20px 40px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+    }
+
+    nav ul {
+      list-style: none;
+      padding: 0;
+    }
+
+    nav ul li {
+      display: inline;
+      margin-right: 20px;
+    }
+
+    section {
+      padding: 20px;
+      margin-bottom: 30px;
+    }
+
+    h2 {
+      border-bottom: 1px solid #ccc;
+      padding-bottom: 10px;
+    }
+
+    img {
+      max-width: 100%;
+      height: auto;
+      display: block;
+      margin-bottom: 15px;
+    }
+
+    footer {
+      background-color: #333;
+      color: white;
+      text-align: center;
+      padding: 10px;
+    }
+	
+	    .logo img {
+      max-width: 150px;
+      height: auto;
+      display: block;
+      margin: 0 auto; 
+    }
+
+    /* Специфічні стилі для розділів */
+    #types div,
+    #special div {
+      margin-bottom: 30px;
+    }
+
+    #types img,
+    #special img {
+      width: 200px;
+      border: 2px solid #ccc;
+      border-radius: 5px;
+    }
+
+    #football img {
+      width: 600px;
+      display: block;
+      margin: 0 auto;
+    }
+  </style>
 </head>
 <body>
-<header>
+  <!-- Header - Головна сторінка -->
+  <header>
+      <div class="logo">
+      <img src=".\copia\logo.jpg" alt="logo">
+      </div>
+    <h1>Види покемонів </h1>
+    <nav>
+      <ul>
+	    <li><a href="#info"> Вступ </a></li>
+        <li><a href="#types">Покемони за типами</a></li>
+        <li><a href="#special">Покемони з особливими характерами</a></li>
+        <li><a href="#football">Покемони і футбол</a></li>
+      </ul>
+    </nav>
+  </header>
+  
+  
+  <section id="info">
+    <h2>Про проект </h2>
+    <div>
+     <p>Цей застосунок розроблений для кращої класифікації покемонів. 
+	 Для презентації можливостей типізації було обрано 9 різних покемонів.       
+     Проведено збір даних та опублікована інформація на сайті. Продукт несе розважально-навчальний характер.
+	 Розробка такого застосунку для класифікації покемонів, який є розважально-навчальним, забезпечить захоплюючий досвід. 
+	 Інформація містить картинки, описи типу покемона. Це призведе до корисного часопроведення користувачем , якому подобаються покемони
+    </p>	 
+    </div>
+  </section>
+  
+  
 
- Мафія, <?php
-echo "дата : " . date('d.m.y') . "";
-?>
-
-</header>
-<main>
-<div class="sidebar">
- <nav>
- <ul class="navigation">
- <p>Навігація</p>
- <li>
- <a href="index.html">
- Головна
- </a>
- </li>
- <li>
- <a href="about-us.html">
- Про нас
- </a>
- </li>
- </ul>
- </nav>
-</div>
-<div id="buttonSection"></div>
-<script type="text/javascript">
-let counter = 0;
-function increment() {
- counter++;
- document.getElementById("countText").innerHTML = counter;
- 
- if (counter >= 20) {
- alert("Досягнення за наполегливість отримано");
- }
-}
-
-function pasteHTML() {
- const buttonSection = document.getElementById("buttonSection");
- const button = document.createElement("button");
- button.innerHTML = "кнопка";
- button.onclick = increment;
- const countText = document.createElement("font");
- countText.id = "countText";
- countText.innerHTML = "0";
- buttonSection.appendChild(button);
- buttonSection.appendChild(document.createTextNode(" Кількість натискань на клавішу: "));
- buttonSection.appendChild(countText);
-}
-
-pasteHTML();
-</script>
- <center><h1>Список ролей у мафії</h1></center>
-    <ol><i>
-        <li>Мафія</li>
-        <li>Дон</li>
-        <li>Комісар</li>
-        <li>Мирний житель</li>
-    </i></ol>
-<center><table border="2">
-        <tr>
-            <th>Назва ролі</th>
-            <th>Опис ролі</th>
-            <th>Складність</th>
-        </tr>
-        <tr>
-            <td>Дон</td>
-            <td>Керує командою чорних, шукає шерифа</td>
-            <td>+++</td>
-        </tr>
-        <tr>
-            <td>Мафія</td>
-            <td>Чорний, який має вбити всіх червоних в ніч</td>
-            <td>++</td>
-        </tr>
-        <tr>
-            <td>Комісар</td>
-            <td>В команді червоних, шукає чорних</td>
-            <td>+++</td>
-        </tr>
-        <tr>
-            <td>Мирний житель</td>
-            <td>В команді червоних, на стадії дня вичисляють чорних та голосують проти них</td>
-            <td>+</td>
-        </tr>
-    </table></center>
+  <!-- Section 1 - Покемони за типами -->
+  <section id="types">
+    <h2>Покемони за типами</h2>
+    <div>
+      <h3>Психічний тип</h3>
+      <img src=".\copia\ela.jpg" alt="Еспеон">
+      <p>Еспеон - це покемон здатний до ефектного контролю психічної енергії. Він має елегантну зовнішність з фіолетовим хутром і червоними крилоподібними структурами на спині. Цей покемон володіє високим інтелектом і можливостями управління психічною силою. Він часто використовує свої здібності для захисту себе та товаришів..</p>
+	  
+	  <h3>Темний тип</h3>
+	  <img src=".\copia\ymbrion.jpg" alt="ymbrion">
+	  <p>Умбреон - загадковий покемон з темними хутром і золотистими кільцями навколо вух. Його здатність адаптуватися до темряви робить його дуже ефективним у нічних битвах. Умбреон володіє надзвичайною в'язкістю та здатністю виділяти слиз, що може використовувати для захисту або нападу. </p>
+	  <h3>Драконічний/Земляний тип</h3>
+	  <img src=".\copia\Flaigon.jpg" alt="ymbrion">
+	  <p>Флайгон - драконічний покемон зеленого кольору, який має крила схожі на вентилятори і гострі рожеві очі. Він володіє силовими драконічними і земляними здібностями, дозволяючи йому легко рухатися по повітрю та землі. Флайгон володіє великою швидкістю і надзвичайною міцністю. </p>
+	  <h3>Нормальний тип</h3>
+	  <img src=".\copia\mia.jpg" alt="ymbrion">
+	  <p> Іві, маленький покемон, який має коричневий мех, що нагадує м'якість плюшу. Його тіло вкрите коричневим пушком, створюючи враження теплоти та затишку. Однак, прикметний контраст відчутний у кончику пухнастого хвоста та великому меховому воротнику, які мають кремовий відтінок </p>
+	  
+	  <h3>Електричний тип</h3>
+	  <img src=".\copia\pichy.jpg" alt="ymbrion">
+	  <p>Пічу - це маленький, плюшевий покемон, схожий на молодшу версію Пікачу. Цей малюк також володіє електричними здібностями, але їхні потужності зазвичай менші, оскільки він ще тільки навчається контролювати свої здібності.Має можливість еволюціонувати в Пікачу. </p>
+	  <img src=".\copia\pikachy.jpg" alt="ymbrion">
+	  <p>Пікачу - найвідоміший іконічний покемон, має жовтий зовнішній вигляд з блискучими червоними плямами на щоках. Цей покемон електричного типу володіє сильними здібностями електричного розряду. Він має високий рівень енергії та характерний піковий хвіст, який використовує для накопичення енергії. </p>
+	  
+	  
     
-	<br>
-<h1>Додати відгук</h1>
-<form method="post" action="scripts/post.php">
-Нік: <input type="text" name="fname">
-Коментар: <input type="text" name="ftext">
-<input type="submit">
-</form>
-<br>
-	
-    <br>
-<center><iframe width="560" height="315" src="https://www.youtube.com/embed/fjizn7UigTs" title="YouTube video gaid" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></center>
-<br>
+    </div>
+  </section>
 
+  <!-- Section 2 - Покемони з особливими характерами -->
+  <section id="special">
+    <h2>Покемони з особливими характерами</h2>
+    <div>
+      <h3>Лінивий покемон</h3>
+      <img src=".\copia\sloupok.jpg" alt="Слоупок">
+      <p>Слоупок — м'який та спокійний покемон. Він має водяний та психічний тип, що дає йому можливість володіти як водними, так і психічними атаками. Цей покемон славиться своєю повільністю та великими здатностями до спокою. Слоупок володіє сильними психічними здібностями, які він використовує, добре обдумуючи свої дії.</p>
+      
+	  <h3>Веселий і активний покемон</h3>
+	  <img src=".\copia\vuper.jpg" alt="Слоупок">
+	  <p>Вупер — енергійний та веселий покемон, що належить до типу Нормальний. Він завжди повний ентузіазму та готовий до пригод. Вупер володіє підвищеною активністю та жвавістю, завдяки чому він завжди готовий до ігор та розваг.</p>
+	  
+	  <h3>Милий покемон</h3>
+	  <img src=".\copia\mayt.jpg" alt="Слоупок">
+	  <p>Мяут — це покемон з дуже миленьким виглядом і приязною поведінкою. Його зовнішність вражає своєю ніжністю: пухнасте тіло, яке нагадує плюшеву іграшку, м'які округлі очі, які виражають доброту, та лагідна улесливість у рухах.
 
-</main>
-<footer>
- Сайт
-</footer>
+Мяут відноситься до типу Нормальний, що дає йому можливість використовувати різноманітні атаки та мати різноманітні можливості в бою. Але основна риса його характеру — це його приязність та лагідність.</p>
+	  <img src=".\copia\mayt2.jpg" alt="Слоупок">
+	  <p>Він віддає перевагу мирним ситуаціям і уникне конфліктів, намагаючись знайти спільну мову з усіма. Цей покемон доброзичливий та спокійний, готовий підтримати своїх друзів у будь-який час.
+
+Його дружелюбний ставлення до інших покемонів та тренера робить його відмінним компаньйоном. Він може бути вірним товаришем у подорожах, а його лагідність може впливати на атмосферу всієї команди. Мяут — це символ теплоти та приязності, завжди готовий допомогти та підтримати своїх друзів.</p>
+	  
+	  
+    </div>
+  </section>
+
+  <!-- Section 3 - Покемон футбол -->
+  <section id="football">
+    <h2>Покемони і футбол</h2>
+    <img src=".\copia\fotbaal.gif" alt="Гра покемонів у футбол">
+    <p>Колоборація покемонів і футболу у вигляді анімації. Рекомендується для перегляду фанатами покемонів і футболу. Історія має неочікуванну розв'язку </p>
+  </section>
+
+  <!-- Footer - Підвал сайту -->
+  <footer>
+    <p>&copy; 2023 Розробив Топольніцький Тарас.</p>
+  </footer>
 </body>
 </html>
+
